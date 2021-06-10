@@ -19,21 +19,12 @@ class Welcome extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      width: 150,
-                      height: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(100))),
-                      margin: EdgeInsets.only(top: 30),
-                      child: Text(
-                        "Go",
-                        style: TextStyle(
-                          color: Color.fromRGBO(128, 225, 209, 1),
-                          fontSize: 120,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                    SizedBox(
+                      height: 19,
+                    ),
+                    Image(
+                      image: AssetImage("assets/go.png"),
+                      width: 160,
                     ),
                     Container(
                       width: 75,

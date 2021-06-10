@@ -48,52 +48,9 @@ class _RegState extends State<Reg> {
                         )),
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                        alignment: Alignment.center,
-                        width: 150,
-                        height: 150,
-                        decoration: BoxDecoration(
-                            color: mainColor,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(100))),
-                        margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(right: 25),
-                              child: Text(
-                                "Regi",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 50,
-                                  fontFamily: 'staatliches',
-                                  letterSpacing: 11,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(left: 18),
-                              child: Text(
-                                "ster",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 50,
-                                  fontFamily: 'staatliches',
-                                  letterSpacing: 11,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ],
-                        )),
-                  ],
+                Image(
+                  image: AssetImage("assets/reg.png"),
+                  width: 160,
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 16),
