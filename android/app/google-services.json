@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "151328699973",
+    "firebase_url": "https://notepad-saif-default-rtdb.firebaseio.com",
+    "project_id": "notepad-saif",
+    "storage_bucket": "notepad-saif.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151328699973:android:1ef8e108414338d4f5952c",
+        "android_client_info": {
+          "package_name": "com.saif.notepad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151328699973-vpfmfgl4kj1v95tcjksd6plnjgdfgrmn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkyPknPWFg2rpNwlkgM7ryUB23SBW-Now"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151328699973-vpfmfgl4kj1v95tcjksd6plnjgdfgrmn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
