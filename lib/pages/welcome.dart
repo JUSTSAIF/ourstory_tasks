@@ -1,66 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:todo/pages/login.dart';
-import 'package:todo/pages/register.dart';
-import 'package:todo/widgets/ChangeStatusBarColor.dart';
+import 'package:get/get.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({Key? key}) : super(key: key);
-
   @override
   _WelcomeState createState() => _WelcomeState();
 }
 
 class _WelcomeState extends State<Welcome> {
-  Widget loginBu() {
-    return InkWell(
-      onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Login()));
-      },
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.symmetric(vertical: 13),
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(5)),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                  color: Color(0xffdf8e33).withAlpha(100),
-                  offset: Offset(2, 4),
-                  blurRadius: 8,
-                  spreadRadius: 2)
-            ],
-            color: Colors.white),
-        child: Text(
-          'Login',
-          style: TextStyle(fontSize: 20, color: Color(0xfff7892b)),
-        ),
-      ),
-    );
-  }
-
-  Widget _signUpButton() {
-    return InkWell(
-      onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Register()));
-      },
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.symmetric(vertical: 13),
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          border: Border.all(color: Colors.white, width: 2),
-        ),
-        child: Text(
-          'Register now',
-          style: TextStyle(fontSize: 20, color: Colors.white),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,12 +43,49 @@ class _WelcomeState extends State<Welcome> {
               SizedBox(
                 height: 80,
               ),
-              loginBu(),
+              // (0w0) :: Button => Go To Login
+              InkWell(
+                onTap: () => Get.offAllNamed('/login'),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.symmetric(vertical: 13),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                            color: Color(0xffdf8e33).withAlpha(100),
+                            offset: Offset(2, 4),
+                            blurRadius: 8,
+                            spreadRadius: 2)
+                      ],
+                      color: Colors.white),
+                  child: Text(
+                    'Login',
+                    style: TextStyle(fontSize: 20, color: Color(0xfff7892b)),
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 20,
               ),
-              _signUpButton(),
-              ChangeStatusBarColor(color: Color(0xfffbb448))
+              // (0w0) :: Button => Go To Create New Account
+              InkWell(
+                onTap: () => Get.offAllNamed('/register'),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.symmetric(vertical: 13),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    border: Border.all(color: Colors.white, width: 2),
+                  ),
+                  child: Text(
+                    'Register now',
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

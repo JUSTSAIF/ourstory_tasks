@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// This Widget use to push pages with Remove All
 Widget backBu({String page = '/welcome'}) {
   return InkWell(
     onTap: () {

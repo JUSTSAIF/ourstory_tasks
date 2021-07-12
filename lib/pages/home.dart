@@ -6,13 +6,11 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:todo/controllers/authController.dart';
 import 'package:todo/controllers/todoController.dart';
-import 'package:todo/widgets/ChangeStatusBarColor.dart';
 import 'package:todo/widgets/newTodo.dart';
 import 'package:todo/widgets/todoCard.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
-
   @override
   _HomeState createState() => _HomeState();
 }
@@ -122,6 +120,7 @@ class _HomeState extends State<Home> {
                         color: Colors.black,
                         child: InkWell(
                           onTap: () async {
+                            // reLoad Data `ToDos`
                             await newTodo();
                             todo.onInit();
                           },
@@ -137,7 +136,6 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    ChangeStatusBarColor(color: HexColor("#272727"))
                   ],
                 )),
           ),

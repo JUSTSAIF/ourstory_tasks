@@ -16,6 +16,7 @@ class TodoController extends GetxController {
     super.onInit();
   }
 
+  // Add new todo
   add(String title, String des) async {
     try {
       await db.users.doc(auth.user?.uid).collection("todos").add({
@@ -31,6 +32,16 @@ class TodoController extends GetxController {
       Get.snackbar("Err", e.message.toString(),
           snackPosition: SnackPosition.BOTTOM);
       return false;
+    }
+  }
+
+  // Update Todo
+  updateTodo(String tid, String title, String des) {
+    try {
+      userTodos?.doc(tid).update({'title': title, 'des': des});
+    } on FirebaseAuthException catch (e) {
+      Get.snackbar("Error Updating Todo", e.message.toString(),
+          snackPosition: SnackPosition.BOTTOM);
     }
   }
 

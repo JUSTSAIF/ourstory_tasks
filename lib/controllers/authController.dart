@@ -20,24 +20,20 @@ class AuthController extends GetxController {
   }
 
   // User Registration Method
-  void createUser(String name, String email, String password) async {
+  createUser(String name, String email, String password) async {
     try {
       await _auth
           .createUserWithEmailAndPassword(
               email: email.trim(), password: password)
+          .then((value) =>
+              {user?.updateDisplayName(name).then((value) => db.newUser(name))})
           .then((u) => {
                 Get.snackbar(
                   "Registration Success",
-                  'Welcome ${user?.displayName}',
+                  'Welcome ' + name,
                   backgroundColor: Colors.greenAccent[100],
                   snackPosition: SnackPosition.BOTTOM,
                 )
-              })
-          .whenComplete(() => {
-                user
-                    ?.updateDisplayName(name)
-                    .then((value) => db.newUser(user?.uid))
-                    .then((value) => {Get.toNamed('/home')})
               });
     } on FirebaseAuthException catch (e) {
       Get.snackbar(
@@ -47,21 +43,24 @@ class AuthController extends GetxController {
         snackPosition: SnackPosition.BOTTOM,
       );
     }
+    return true;
   }
 
   // User Login Method
-  void login(String email, String password) async {
+  login(String email, String password) async {
     try {
       await _auth
           .signInWithEmailAndPassword(email: email.trim(), password: password)
           .whenComplete(() => {
-                Get.snackbar(
-                  "Login Success",
-                  'Welcome ${user?.displayName}',
-                  backgroundColor: Colors.greenAccent[100],
-                  snackPosition: SnackPosition.BOTTOM,
-                ),
-                // Get.offNamed('/home')
+                if (user != null)
+                  {
+                    Get.snackbar(
+                      "Login Success",
+                      'Welcome ${user?.displayName}',
+                      backgroundColor: Colors.greenAccent[100],
+                      snackPosition: SnackPosition.BOTTOM,
+                    ),
+                  }
               });
     } on FirebaseAuthException catch (e) {
       Get.snackbar(
@@ -71,6 +70,7 @@ class AuthController extends GetxController {
         snackPosition: SnackPosition.BOTTOM,
       );
     }
+    return true;
   }
 
   // User Logout

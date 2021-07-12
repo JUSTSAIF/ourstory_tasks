@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:todo/widgets/ChangeStatusBarColor.dart';
 import 'package:todo/widgets/backBu.dart';
 import 'package:todo/controllers/authController.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
-
   @override
   _ProfileState createState() => _ProfileState();
 }
@@ -16,11 +14,9 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     final auth = Get.find<AuthController>();
-
     return Scaffold(
       body: Column(
         children: <Widget>[
-          ChangeStatusBarColor(color: Colors.white10),
           SizedBox(
             height: 25,
           ),

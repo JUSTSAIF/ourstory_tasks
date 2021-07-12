@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:hexcolor/hexcolor.dart';
 
-Widget todoCardSlide(Widget child, {onDel, done, unDone}) {
+Widget todoCardSlide(Widget child, {onDel, done, unDone, onUpdate}) {
   return Slidable(
     closeOnScroll: true,
     actionPane: SlidableDrawerActionPane(),
     child: child,
     secondaryActions: <Widget>[
+      IconSlideAction(
+        caption: 'Edit',
+        color: HexColor('#57CFFF'),
+        icon: Icons.edit,
+        onTap: onUpdate,
+      ),
       IconSlideAction(
         caption: 'Done',
         color: Colors.green[300],
